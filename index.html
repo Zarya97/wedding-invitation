@@ -111,14 +111,18 @@
   }
 
   .dot-motif, .dot-motif-quran {
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    transform: translateY(1.5px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
   }
-  .dot-motif span{
-    width:6px;height:6px;background:var(--gold);
-    transform:rotate(45deg);display:inline-block;
+  
+  .dot-motif span {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    display: block; /* Changed from inline-block to perfectly center in flex */
   }
   .dot-motif span:nth-child(2){background:transparent;border:1px solid var(--gold);}
   .dot-motif--sm span{width:4px;height:4px;}
@@ -132,7 +136,8 @@
   .divider .line,.hero-divider .line,.message-divider .line{
     flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
   }
-  .line-quran{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  .divider .line-quran,.hero-divider .line-quran,.message-divider-quran .line-quran{
+    flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
   }
   /* ---------- hero ---------- */
   .hero{padding-top:6px;}
@@ -291,7 +296,7 @@
     position:relative;
   }
   .message-card-quran{
-    background:var(--sage);
+    background:var(--paper);
     border:1px solid var(--sage-deep);
     border-radius:14px;
     padding:36px 22px 30px;
