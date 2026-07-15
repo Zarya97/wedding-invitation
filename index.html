@@ -136,7 +136,12 @@
   .divider .line,.hero-divider .line,.message-divider .line{
     flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
   }
-  .divider .line-quran,.hero-divider .line-quran,.message-divider-quran .line-quran{
+  .message-divider-quran{
+    display:flex;align-items:center;gap:10px;
+    max-width:220px;margin:18px auto;
+  }
+
+  .divider .line-quran,.message-divider-quran .line-quran{
     flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
   }
   /* ---------- hero ---------- */
@@ -161,7 +166,7 @@
   .corner--bl{bottom:4px;left:4px;transform:scaleY(-1);}
   .corner--br{bottom:4px;right:4px;transform:scale(-1,-1);}
 
-  .hero-card .dot-motif{margin-bottom:22px;}
+  .hero-card .dot-motif{margin-bottom:0px;}
 
   .hero-blessing{
     font-family:'Amiri',serif;
