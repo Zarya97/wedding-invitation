@@ -127,7 +127,9 @@
   .divider .line,.hero-divider .line,.message-divider .line{
     flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
   }
-
+.divider-quran .line-quran,.hero-divider-quran .line-quran,.message-divider-quran .line-quran{
+    flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--sage),transparent);
+  }
   /* ---------- hero ---------- */
   .hero{padding-top:6px;}
   .hero-card{
@@ -284,9 +286,22 @@
     box-shadow:var(--shadow);
     position:relative;
   }
+  .message-card-quran{
+    background:var(--paper);
+    border:1px solid var(--sage-pale);
+    border-radius:14px;
+    padding:36px 22px 30px;
+    box-shadow:var(--shadow);
+    position:relative;
+  }
   .quote-mark{
     font-family:'Aref Ruqaa',serif;
     font-size:2.6rem;color:var(--gold-pale);
+    line-height:0;position:absolute;top:22px;right:26px;
+  }
+  .quote-mark-quran{
+    font-family:'Aref Ruqaa',serif;
+    font-size:2.6rem;color:var(--sage-pale);
     line-height:0;position:absolute;top:22px;right:26px;
   }
   .message-text{
@@ -298,6 +313,11 @@
   .message-highlight{
     font-family:'Aref Ruqaa',serif;
     font-size:1.25rem;color:var(--gold-deep);
+    margin-top:4px;
+  }
+  .message-highlight-quran{
+    font-family:'Aref Ruqaa',serif;
+    font-size:1.25rem;color:var(--sage-deep);
     margin-top:4px;
   }
 
@@ -650,6 +670,16 @@
     </div>
   </header>
 
+  <section class="section">
+    <div class="message-card-quran reveal">
+      <span class="quote-mark-quran" aria-hidden="true">”</span>
+      <p class="message-text">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا</p>
+      <p class="message-text">لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
+      <div class="message-divider-quran"><span class="quran-line"></span><span class="dot-motif dot-motif--sm dot-motif--gold"><span></span><span></span><span></span></span><span class="quran-line"></span></div>
+      <p class="message-highlight-quran">صدق الله العظيم — سورة الروم، الآية ٢١</p>
+    </div>
+  </section>
+
   <!-- COUNTDOWN -->
   <section class="section" id="countdown">
     <p class="eyebrow reveal">العدّ التنازلي</p>
@@ -680,7 +710,7 @@
   <section class="section">
     <div class="message-card reveal">
       <span class="quote-mark" aria-hidden="true">”</span>
-      <p class="message-text">لنوقد الشموع، ونثر الزهور، وتدق الدفوف، احتفالاً بزفاف زەریا وئاشتى</p>
+      <p class="message-text">لنوقد الشموع، ونثر الزهور، وتدق الدفوف، احتفالاً بزفاف زەریا و ئاشتى</p>
       <p class="message-text">نأمل حضوركم ومشاركتكم فرحتنا في حفل الزفاف</p>
       <div class="message-divider"><span class="line"></span><span class="dot-motif dot-motif--sm dot-motif--sage"><span></span><span></span><span></span></span><span class="line"></span></div>
       <p class="message-highlight">بحضوركم يتمّ لنا الفرح والسرور</p>
@@ -913,7 +943,7 @@
     const note = document.getElementById('rsvp-message').value.trim();
     const attendingText = attending.value === 'yes' ? 'سنحضر بإذن الله' : 'نعتذر عن الحضور';
 
-    let text = 'تأكيد حضور حفل زفاف زەریا وئاشتى\n';
+    let text = 'تأكيد حضور حفل زفاف زەریا و ئاشتى\n';
     text += 'الاسم: ' + name + '\n';
     text += attendingText + '\n';
     if (attending.value === 'yes') text += 'عدد الحضور: ' + toArabicNumerals(guests) + '\n';
